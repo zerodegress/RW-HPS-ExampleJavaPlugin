@@ -48,12 +48,12 @@ public class Main extends Plugin {
 	public void registerClientCommands(CommandHandler handler){
 
 		//向自己回复消息
-		handler.<Player>register("reply", "<text...>", "只取第一个回复.", (args, player) -> {
+		handler.<Player>register("reply", "<text...>", "#只取第一个回复.", (args, player) -> {
 			player.sendSystemMessage("你发的是: " + args[0]);
 		});
 
 		//向玩家发送
-		handler.<Player>register("whisper", "<player> <text...>", "Whisper text to another player.", (args, player) -> {
+		handler.<Player>register("whisper", "<player> <text...>", "#向另一个玩家发消息.", (args, player) -> {
 			//查找玩家
 			Player other = Data.playerGroup.find(p -> p.name.equalsIgnoreCase(args[0]));
 
