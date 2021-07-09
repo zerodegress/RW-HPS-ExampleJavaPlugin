@@ -5,6 +5,8 @@ import com.github.dr.rwserver.data.global.Data;
 import com.github.dr.rwserver.func.StrCons;
 import com.github.dr.rwserver.game.EventType;
 import com.github.dr.rwserver.plugin.Plugin;
+import com.github.dr.rwserver.plugin.event.AbstractEvent;
+import com.github.dr.rwserver.util.Time;
 import com.github.dr.rwserver.util.game.CommandHandler;
 import com.github.dr.rwserver.util.game.Events;
 
@@ -17,14 +19,19 @@ public class Main extends Plugin {
 	@Override
 	public void init(){
 		//监听玩家进入
-		Events.on(EventType.PlayerJoin.class, event -> {
-			event.player.sendSystemMessage("Plugin测试 这是进入的时间");
+		Events.on(EventType.PlayerJoinEvent.class, event -> {
+			event.player.sendSystemMessage("Plugin测试 这是进入的时间 "+ Time.getUtcMilliFormat(1));
 		});
 
 		//过滤消息
 		Data.core.admin.addChatFilter((player, text) -> text.replace("heck", "h*ck"));
 
 		//动作过滤正在进行中
+	}
+
+	@Override
+	public AbstractEvent registerEvents(){
+		return new Event();
 	}
 
 	//注册服务器命令
@@ -46,7 +53,6 @@ public class Main extends Plugin {
 	//注册客户端命令
 	@Override
 	public void registerClientCommands(CommandHandler handler){
-
 		//向自己回复消息
 		handler.<Player>register("reply", "<text...>", "#只取第一个回复.", (args, player) -> {
 			player.sendSystemMessage("你发的是: " + args[0]);
