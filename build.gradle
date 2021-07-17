@@ -15,7 +15,7 @@ ext{
 }
 
 dependencies{
-	compileOnly group: 'com.github.RW-HPS', name: 'RW-HPS', version: '-SNAPSHOT'
+	compileOnly group: 'com.github.RW-HPS', name: 'RW-HPS', version: '1.3.0'
 
 }
 
