@@ -52,7 +52,7 @@ public class Event implements AbstractEvent {
     @NotNull
     @Override
     public String[] registerPlayerConnectPasswdCheckEvent(@NotNull AbstractNetConnect abstractNetConnect, @NotNull String s) {
-        return new String[0];
+        return new String[] {"false",""};
     }
 
     @Override
