@@ -24,7 +24,7 @@ public class Main extends Plugin {
 	public void init(){
 		//监听玩家进入
 		Events.on(EventType.PlayerJoinEvent.class, event -> {
-			event.player.sendSystemMessage("Plugin测试 这是进入的时间 "+ Time.getUtcMilliFormat(1));
+			event.getPlayer().sendSystemMessage("Plugin测试 这是进入的时间 "+ Time.getUtcMilliFormat(1));
 		});
 
 		//过滤消息
@@ -50,12 +50,12 @@ public class Main extends Plugin {
 		 *         这个是正常的 正在想办法解决
 		 */
 		//读取数据
-		long lastStartTime = this.getPluginData().getData("lastStartTime",Time.concurrentMillis());
-		String lastStartTimeString = this.getPluginData().getData("lastStartTimeString",Time.getUtcMilliFormat(1));
+		long lastStartTime = this.pluginData.getData("lastStartTime",Time.concurrentMillis());
+		String lastStartTimeString = this.pluginData.getData("lastStartTimeString",Time.getUtcMilliFormat(1));
 		Log.info("lastStartTime",lastStartTime);
 		Log.info("lastStartTimeString",lastStartTimeString);
-		this.getPluginData().setData("lastStartTime",Time.concurrentMillis());
-		this.getPluginData().setData("lastStartTimeString",Time.getUtcMilliFormat(1));
+		this.pluginData.setData("lastStartTime",Time.concurrentMillis());
+		this.pluginData.setData("lastStartTimeString",Time.getUtcMilliFormat(1));
 	}
 
 	@Override
