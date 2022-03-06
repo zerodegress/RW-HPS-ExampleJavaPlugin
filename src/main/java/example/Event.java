@@ -1,9 +1,9 @@
 package example;
 
-import com.github.dr.rwserver.data.Player;
-import com.github.dr.rwserver.net.core.server.AbstractNetConnect;
+import com.github.dr.rwserver.data.player.Player;
+import com.github.dr.rwserver.net.netconnectprotocol.realize.GameVersionServer;
 import com.github.dr.rwserver.plugin.event.AbstractEvent;
-import com.github.dr.rwserver.util.log.Log;
+import com.github.dr.rwserver.util.Time;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -15,13 +15,9 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Event implements AbstractEvent {
     @Override
-    public void registerServerLoadEvent() {
-        Log.clog("Example Plugin加载完了");
-    }
-
-    @Override
     public void registerPlayerJoinEvent(Player player) {
         player.sendSystemMessage("你好!! 这是RW-HPS新的Event的实现");
+        player.sendSystemMessage("Plugin测试 这是进入的时间 "+ Time.getUtcMilliFormat(1));
     }
 
     @Override
@@ -51,7 +47,7 @@ public class Event implements AbstractEvent {
 
     @NotNull
     @Override
-    public String[] registerPlayerConnectPasswdCheckEvent(@NotNull AbstractNetConnect abstractNetConnect, @NotNull String s) {
+    public String[] registerPlayerConnectPasswdCheckEvent(@NotNull GameVersionServer abstractNetConnect, @NotNull String s) {
         return new String[] {"false",""};
     }
 

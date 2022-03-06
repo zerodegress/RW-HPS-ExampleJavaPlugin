@@ -2,8 +2,8 @@ apply plugin: "java"
 
 version '1.0'
 
-sourceCompatibility = 11
-targetCompatibility=11
+sourceCompatibility = 8
+targetCompatibility=8
 
 repositories{
 	maven{ url "https://maven.aliyun.com/nexus/content/groups/public/"}
@@ -17,7 +17,7 @@ ext{
 dependencies{
 	//compileOnly group: 'com.github.RW-HPS.RW-HPS', name: 'Server', version: 'master-SNAPSHOT'
 	//compileOnly group: 'com.github.RW-HPS', name: 'RW-HPS', version: '-SNAPSHOT'
-	compileOnly 'com.github.RW-HPS.RW-HPS:Server:1.5.0'
+	compileOnly 'com.github.RW-HPS.RW-HPS:Server:58d0f04721'
 
 }
 
