@@ -1,0 +1,8 @@
+{
+  "name": "MyExample",
+  "author": "IceDegress",
+  "main": "example.Main",
+  "description": "example",
+  "version": "1.0.0",
+  "supportedVersions": ">= 5.4.2"
+}

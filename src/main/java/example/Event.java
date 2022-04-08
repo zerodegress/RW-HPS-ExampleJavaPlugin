@@ -1,9 +1,9 @@
 package example;
 
-import com.github.dr.rwserver.data.player.Player;
-import com.github.dr.rwserver.net.netconnectprotocol.realize.GameVersionServer;
-import com.github.dr.rwserver.plugin.event.AbstractEvent;
-import com.github.dr.rwserver.util.Time;
+import cn.rwhps.server.data.player.Player;
+import cn.rwhps.server.net.netconnectprotocol.realize.GameVersionServer;
+import cn.rwhps.server.plugin.event.AbstractEvent;
+import cn.rwhps.server.util.Time;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -17,7 +17,8 @@ public class Event implements AbstractEvent {
     @Override
     public void registerPlayerJoinEvent(Player player) {
         player.sendSystemMessage("你好!! 这是RW-HPS新的Event的实现");
-        player.sendSystemMessage("Plugin测试 这是进入的时间 "+ Time.getUtcMilliFormat(1));
+        player.sendSystemMessage("打铁千万条,友爱第一条。友爱不规范,亲人两行泪。");
+        player.sendSystemMessage("现在时间是： "+ Time.getUtcMilliFormat(1));
     }
 
     @Override

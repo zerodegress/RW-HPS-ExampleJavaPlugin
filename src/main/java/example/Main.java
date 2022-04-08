@@ -1,14 +1,14 @@
 package example;
 
-import com.github.dr.rwserver.data.global.Data;
-import com.github.dr.rwserver.data.player.Player;
-import com.github.dr.rwserver.data.plugin.PluginData;
-import com.github.dr.rwserver.func.StrCons;
-import com.github.dr.rwserver.plugin.Plugin;
-import com.github.dr.rwserver.plugin.event.AbstractEvent;
-import com.github.dr.rwserver.util.Time;
-import com.github.dr.rwserver.util.game.CommandHandler;
-import com.github.dr.rwserver.util.log.Log;
+import cn.rwhps.server.data.global.Data;
+import cn.rwhps.server.data.player.Player;
+import cn.rwhps.server.data.plugin.PluginData;
+import cn.rwhps.server.func.StrCons;
+import cn.rwhps.server.plugin.Plugin;
+import cn.rwhps.server.plugin.event.AbstractEvent;
+import cn.rwhps.server.util.Time;
+import cn.rwhps.server.util.game.CommandHandler;
+import cn.rwhps.server.util.log.Log;
 
 import java.util.Arrays;
 
@@ -81,10 +81,10 @@ public class Main extends Plugin {
 			player.sendSystemMessage("你发的是: " + args[0]);
 		});
 
-		//向玩家发送
+		/* //向玩家发送
 		handler.<Player>register("whisper", "<player> <text...>", "#向另一个玩家发消息.", (args, player) -> {
 			//查找玩家
-			Player other = Data.game.playerManage.playerGroup.find(p -> p.name.equalsIgnoreCase(args[0]));
+			Player other = Data.game.getPlayerManage().getPlayerArray(p -> p.name.equalsIgnoreCase(args[0]));
 
 			if(other == null){
 				player.sendSystemMessage("找不到这个玩家!");
@@ -93,7 +93,7 @@ public class Main extends Plugin {
 
 			//向玩家发消息
 			other.sendSystemMessage("玩家: " + player.name + " 向你发送: " + args[1]);
-		});
+		}); */
 	}
 
 	@Override

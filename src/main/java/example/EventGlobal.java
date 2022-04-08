@@ -1,8 +1,8 @@
 package example;
 
-import com.github.dr.rwserver.net.core.ConnectionAgreement;
-import com.github.dr.rwserver.plugin.event.AbstractGlobalEvent;
-import com.github.dr.rwserver.util.log.Log;
+import cn.rwhps.server.net.core.ConnectionAgreement;
+import cn.rwhps.server.plugin.event.AbstractGlobalEvent;
+import cn.rwhps.server.util.log.Log;
 import org.jetbrains.annotations.NotNull;
 
 public class EventGlobal implements AbstractGlobalEvent {
